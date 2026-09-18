@@ -8,6 +8,12 @@
 		<version>4.1.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>add2num-core</module>
+	</modules>
+
 	<groupId>com.xuan</groupId>
 	<artifactId>add2num-web</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
@@ -48,6 +54,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.xuan</groupId>
+			<artifactId>add2num-core</artifactId>
+			<version>0.0.1</version>
 		</dependency>
 	</dependencies>
 
