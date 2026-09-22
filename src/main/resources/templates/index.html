@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+
+    <title>Add 2 Large Numbers</title>
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+    <h1 class="mb-4">
+        Add 2 Large Numbers
+    </h1>
+
+    <form method="post" action="/add">
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Number 1
+            </label>
+
+            <input
+                    type="text"
+                    name="stn1"
+                    class="form-control"
+                    th:value="${stn1}">
+
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">
+                Number 2
+            </label>
+
+            <input
+                    type="text"
+                    name="stn2"
+                    class="form-control"
+                    th:value="${stn2}">
+
+        </div>
+
+        <button
+                type="submit"
+                class="btn btn-primary">
+
+            Calculate
+
+        </button>
+
+    </form>
+
+    <div
+            class="mt-4"
+            th:if="${result != null}">
+
+        <h3>Result</h3>
+
+        <div
+                class="alert alert-success"
+                th:text="${result}">
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
