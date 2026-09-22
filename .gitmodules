@@ -1,0 +1,3 @@
+[submodule "add2num-core"]
+	path = add2num-core
+	url = https://github.com/ntxuan40/add2num-core.git
