@@ -1,10 +1,13 @@
 package com.xuan.add2num.web.controller;
 
 
+import com.xuan.add2num.web.dto.StartResponse;
 import com.xuan.add2num.web.service.Add2NumService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api")
@@ -16,7 +19,8 @@ public class Add2NumController {
         this.service = service;
     }
 
-    @PostMapping("/add")
+        @PostMapping(value = "/add", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+        @ResponseStatus(HttpStatus.OK)
     public StartResponse add(
             @RequestParam String stn1,
             @RequestParam String stn2) {
@@ -34,6 +38,13 @@ public class Add2NumController {
     public SseEmitter progress(
             @PathVariable String jobId) {
 
+                if (service.getJob(jobId) == null) {
+                        throw new ResponseStatusException(
+                                        HttpStatus.NOT_FOUND,
+                                        "Job not found"
+                        );
+                }
+
         /*
          * Timeout 0 = không timeout.
          */
@@ -48,6 +59,4 @@ public class Add2NumController {
         return emitter;
     }
 
-    public record StartResponse(String jobId) {
-    }
 }

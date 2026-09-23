@@ -13,8 +13,8 @@
 	<groupId>com.xuan</groupId>
 	<artifactId>add2num-web-app</artifactId>
 	<version>0.0.1</version>
-	<name/>
-	<description/>
+	<name>add2num-web-app</name>
+	<description>Web Application Module for Add2Num</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -54,10 +54,21 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webmvc-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
 			<groupId>com.xuan</groupId>
 			<artifactId>add2num-core</artifactId>
 			<version>0.0.1</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>
